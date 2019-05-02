@@ -1,0 +1,22 @@
+a[href^="https"]:after {
+  content: ' \279A';
+}
+
+body {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+}
+
+.content {
+  display: grid;
+  grid-column: col-start 4 / -1;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(9, [col-start] 1fr);
+  position: relative;
+}
+
+.menu {
+  grid-column: col-start / span 3;
+  position: relative;
+}

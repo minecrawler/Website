@@ -13,34 +13,49 @@ const args = arg({
     '-p': '--production',
     '-w': '--watch',
 });
+const watch =  !!args['--watch'];
 
 (async () => {
     // create public folder if missing and make sure it is empty
     fs.emptyDirSync('public');
 
 
-    // build src
-    const bundler = new Bundler('src/*.pug', {
-        minify: !!args['--production'],
-        outDir: 'public',
-        sourceMaps: !args['--production'],
-        watch: !!args['--watch'],
-    });
-    await bundler.bundle();
-
-
     // copy assets
     fs.copySync('assets', 'public');
 
 
-    // todo: publish, if arg is provided
+    // build src
+    const bundler = new Bundler('src/*.pug', {
+        hmr: watch,
+        minify: !!args['--production'],
+        outDir: 'public',
+        sourceMaps: !args['--production'],
+        watch,
+    });
+
+    if (watch) {
+        bundler.serve();
+    }
+    else {
+        await bundler.bundle();
+    }
+
+
+    // publish, if arg is provided
     if (args['--deploy']) {
+        // todo: make sure everything is committed
+        // todo: delete local gh-pages branch if exists
+
         await git('.').raw([
             'subtree',
-            'push',
+            'split',
             '--prefix', 'public',
-            'origin',
-            'gh-pages',
+            '-b', 'gh-pages',
+        ]);
+        await git('.').push('origin', 'gh-pages:gh-pages', { '-f': null });
+        await git('.').raw([
+            'branch',
+            '-D', 'gh-pages'
         ]);
     }
 })().catch(console.error);
