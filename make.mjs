@@ -13,7 +13,8 @@ const args = arg({
     '-p': '--production',
     '-w': '--watch',
 });
-const watch =  !!args['--watch'];
+const prod = !!args['--production'];
+const watch = !!args['--watch'];
 
 (async () => {
     // create public folder if missing and make sure it is empty
@@ -27,14 +28,14 @@ const watch =  !!args['--watch'];
     // build src
     const bundler = new Bundler('src/*.pug', {
         hmr: watch,
-        minify: !!args['--production'],
+        minify: prod,
         outDir: 'public',
-        sourceMaps: !args['--production'],
+        sourceMaps: !prod,
         watch,
     });
 
     if (watch) {
-        bundler.serve();
+        await bundler.serve();
     }
     else {
         await bundler.bundle();
