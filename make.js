@@ -1,7 +1,7 @@
-import arg from 'arg';
-import Bundler from 'parcel-bundler';
-import fs from 'fs-extra';
-import git from 'simple-git/promise';
+const arg = require('arg');
+const Bundler = require('parcel-bundler');
+const fs = require('fs-extra');
+const git = require('simple-git/promise');
 
 
 const args = arg({
