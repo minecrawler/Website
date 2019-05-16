@@ -1,3 +1,19 @@
+@import "colors";
+
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 0;
+}
+
+a:visited {
+  color: $link-color;
+}
+
 a[href^="https"]:after {
   content: ' \279A';
 }
@@ -6,6 +22,10 @@ body {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(12, [col-start] 1fr);
+}
+
+h1 {
+  border-bottom: solid 2px $spacer-color;
 }
 
 .content {
@@ -30,6 +50,12 @@ body {
 ul.menu {
   list-style: none;
   padding-left: 0;
+}
+
+ul.menu > li {
+  height: 2em;
+  line-height: 2em;
+  padding-left: 1ch;
 }
 
 .socialmedia {
