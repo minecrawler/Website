@@ -5,6 +5,7 @@
   "devDependencies": {
     "arg": "^4.1.0",
     "fs-extra": "^8.0.1",
+    "glob": "^7.1.4",
     "parcel-bundler": "^1.12.3",
     "pug": "^2.0.3",
     "sass": "^1.20.1",
@@ -16,8 +17,5 @@
     "deploy": "node make.js -dp",
     "develop": "node make.js -w",
     "prod": "node make.js -p"
-  },
-  "dependencies": {
-    "glob": "^7.1.4"
   }
 }
