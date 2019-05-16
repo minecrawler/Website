@@ -77,7 +77,6 @@ nav {
     @media screen and (max-width: $bp-menu) {
       display: flex;
       flex-wrap: wrap;
-      grid-column: col-start / -1;
       justify-content: space-around;
 
       > li {
@@ -85,5 +84,9 @@ nav {
         padding-left: 0;
       }
     }
+  }
+
+  @media screen and (max-width: $bp-menu) {
+    grid-column: col-start / -1;
   }
 }
