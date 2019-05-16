@@ -14,16 +14,46 @@
 @import "util";
 
 
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  :focus {
+    outline: 0;
+  }
+
+  :visited {
+    color: $link-color;
+  }
+
+  &[href^="https"]:after {
+    content: ' \279A';
+  }
+}
+
 body {
   @include fluid-type($screen-width-min, $screen-width-max, $font-size-min, $font-size-max);
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(12, [col-start] 1fr);
   font-family: sans-serif;
   line-height: 1.25;
+  padding-right: 10px;
+
+  @media screen and (max-width: $bp-menu) {
+    padding: 10px;
+  }
 }
 
 h1 {
+  border-bottom: solid 2px $spacer-color;
   font-size: 1.953em;
   height: 1.5em;
   width: 100%;
+
+  @media screen and (max-width: $bp-menu) {
+    height: auto;
+  }
 }
 
 h2 {
@@ -32,4 +62,57 @@ h2 {
 
 h3 {
   font-size: 1.25em;
+}
+
+nav {
+  grid-column: col-start / span 3;
+  min-width: $screen-width-min;
+  position: relative;
+
+  > ul {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      height: 2em;
+      line-height: 2em;
+      padding-left: 1ch;
+
+      * {
+        max-height: 100%;
+      }
+    }
+
+    @media screen and (max-width: $bp-menu) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      > li {
+        margin: 0 7px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: $bp-menu) {
+    grid-column: col-start / -1;
+  }
+}
+
+.content {
+  display: grid;
+  grid-column: col-start 4 / -1;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(9, [col-start] 1fr);
+  min-width: $screen-width-min;
+  position: relative;
+
+  h1, p, section {
+    grid-column: col-start 1 / -1;
+  }
+
+  @media screen and (max-width: $bp-menu) {
+    grid-column: col-start 1 / -1;
+  }
 }
