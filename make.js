@@ -57,6 +57,8 @@ const watch = !!args['--watch'];
         fs.writeFileSync(htmlFile, html);
     }
 
+    fs.unlinkSync(critCSSFile);
+
 
     // publish, if arg is provided
     if (args['--deploy']) {
