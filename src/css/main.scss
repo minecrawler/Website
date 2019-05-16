@@ -14,7 +14,7 @@ a {
     color: $link-color;
   }
 
-  [href^="https"]:after {
+  &[href^="https"]:after {
     content: ' \279A';
   }
 }
@@ -55,32 +55,35 @@ h1 {
   }
 }
 
-ul.menu {
+nav {
   grid-column: col-start / span 3;
-  list-style: none;
   min-width: $screen-width-min;
-  padding-left: 0;
   position: relative;
 
-  > li {
-    height: 2em;
-    line-height: 2em;
-    padding-left: 1ch;
-
-    * {
-      max-height: 100%;
-    }
-  }
-  
-  @media screen and (max-width: $bp-menu) {
-    display: flex;
-    flex-wrap: wrap;
-    grid-column: col-start / -1;
-    justify-content: space-around;
+  > ul {
+    list-style: none;
+    padding-left: 0;
 
     > li {
-      margin: 0 7px;
-      padding-left: 0;
+      height: 2em;
+      line-height: 2em;
+      padding-left: 1ch;
+
+      * {
+        max-height: 100%;
+      }
+    }
+
+    @media screen and (max-width: $bp-menu) {
+      display: flex;
+      flex-wrap: wrap;
+      grid-column: col-start / -1;
+      justify-content: space-around;
+
+      > li {
+        margin: 0 7px;
+        padding-left: 0;
+      }
     }
   }
 }

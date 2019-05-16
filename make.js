@@ -1,6 +1,7 @@
 const arg = require('arg');
 const Bundler = require('parcel-bundler');
 const fs = require('fs-extra');
+const glob = require('glob');
 const git = require('simple-git/promise');
 
 
@@ -39,6 +40,21 @@ const watch = !!args['--watch'];
     }
     else {
         await bundler.bundle();
+    }
+
+
+    // inline critical css
+    const [critCSSFile] = glob.sync('public/critical*.css');
+    const critCSS = fs.readFileSync(critCSSFile).toString();
+    const htmlFiles = glob.sync('public/*.html');
+    let html;
+    for (let htmlFile of htmlFiles) {
+        html = fs.readFileSync(htmlFile).toString();
+        html = html.replace(
+            /<link(\srel="?stylesheet"?|\shref="?\/?critical\.\w*\.css"?)+>/i,
+            `<style>${critCSS}</style>`
+        );
+        fs.writeFileSync(htmlFile, html);
     }
 
 
