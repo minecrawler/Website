@@ -147,4 +147,4 @@ const log = str => console.log('[make]', str);
             '-D', 'gh-pages'
         ]);
     }
-})().catch(console.error).finally(() => log('FINISHED'));
+})().catch(console.error).then(() => log('FINISHED'));
