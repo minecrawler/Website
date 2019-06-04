@@ -17,6 +17,7 @@
     "build": "node make.js",
     "deploy": "node make.js -dp",
     "develop": "node make.js -w",
+    "now-build": "npm run prod",
     "prod": "node make.js -p"
   },
   "assets": {
