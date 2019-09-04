@@ -1,9 +1,33 @@
 @import "colors";
 @import "dimensions";
 @import "themes/light";
+@import "typography";
+
+
+a:focus {
+  outline: none;
+}
 
 body {
   @extend %text;
+}
+
+.content {
+  padding-bottom: 2 * $h1-height;
+
+  @media screen and (min-width: $bp-menu) {
+    padding-top: 2 * $h1-height;
+
+    > h1 {
+      background-color: $primary-color;
+      position: fixed;
+      top: 0;
+    }
+  }
+}
+
+.socialmedia a {
+  user-select: none;
 }
 
 /* anything loaded by JS is styled here */

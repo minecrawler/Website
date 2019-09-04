@@ -55,7 +55,7 @@ div {
 
 h1 {
   border-bottom: solid 2px $spacer-color;
-  font-size: 1.953em;
+  font-size: $h1-height;
   width: 100%;
 
   @media screen and (max-width: $bp-menu) {
