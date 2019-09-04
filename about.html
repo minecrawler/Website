@@ -441,13 +441,12 @@ h3 {
 }
 
 nav {
-  grid-column: col-start/span 3;
-  min-width: 320px;
   position: relative;
 }
 nav > ul {
   list-style: none;
   padding-left: 0;
+  width: 100%;
 }
 nav > ul.menu > li {
   height: 2em;
@@ -473,14 +472,9 @@ nav > ul.menu > li * {
     position: fixed;
   }
 }
-nav > ul.socialmedia {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
 nav > ul.socialmedia > li {
-  padding-left: 1ch;
-  padding-bottom: 1ch;
+  margin: 0 1ch 1ch;
+  padding-left: 0;
 }
 nav > ul.socialmedia > li a:after {
   content: "";
@@ -489,8 +483,37 @@ nav > ul.socialmedia > li * {
   max-height: 50px;
 }
 @media screen and (max-width: 666px) {
+  nav > ul.socialmedia > li {
+    display: inline;
+  }
+}
+@media screen and (min-width: 666px) {
+  nav > ul.socialmedia > li.xing {
+    float: left;
+  }
+}
+@media screen and (max-width: 666px) {
+  nav > ul.socialmedia {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 666px) {
+  nav > ul.socialmedia {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
+@media screen and (max-width: 666px) {
   nav {
     grid-column: col-start/-1;
+    min-width: 320px;
+  }
+}
+@media screen and (min-width: 666px) {
+  nav {
+    grid-column: col-start/span 3;
+    height: 100vh;
   }
 }
 
@@ -511,5 +534,5 @@ nav > ul.socialmedia > li * {
   }
 }
 
-/*# sourceMappingURL=critical.2c142113.css.map */</style><meta name="description" content="Information about Marco Alka, Software Engineer and Mentor"><link rel="dns-prefetch" href="//blog.marco-alka.de"><link rel="dns-prefetch" href="//hashnode.com"></head><body><nav><ul class="menu"><li><a href="index.html" rel="">Who I Am</a></li><li><a href="projects.html" rel="">My Projects</a></li><li><a href="contact.html" rel="author">Contact Me</a></li><li><a href="https://blog.marco-alka.de" rel="#{linkExternalFollow}">My Blog</a></li></ul><ul class="socialmedia"><li><a href="https://hashnode.com/@maruru" target="_blank" rel="#{linkExternal}"><img alt="Hashnode" src="hashnode_light.ed9d5cd3.png"></a></li><li><a href="https://twitter.com/minecrawlerx" target="_blank" rel="#{linkExternal}"><img alt="Twitter" src="twitter_light.27df87e4.png"></a></li><li><a href="https://www.linkedin.com/in/marco-alka-678825a8/" target="_blank" rel="#{linkExternal}"><img alt="LinkedIn" src="linkedin_light.a0ec1290.png"></a></li><li><a href="https://www.xing.com/profile/Marco_Alka" target="_blank" rel="#{linkExternal}"><img alt="Xing" src="xing_light.dc893e94.png"></a></li></ul></nav><div class="content"><h1>Work in Progress</h1><p>Thank you for taking interest in me and my work!
+/*# sourceMappingURL=critical.2c142113.css.map */</style><meta name="description" content="Information about Marco Alka, Software Engineer and Mentor"><link rel="dns-prefetch" href="//blog.marco-alka.de"><link rel="dns-prefetch" href="//hashnode.com"></head><body><nav><ul class="menu"><li><a href="index.html" rel="">Who I Am</a></li><li><a href="projects.html" rel="">My Projects</a></li><li><a href="contact.html" rel="author">Contact Me</a></li><li><a href="https://blog.marco-alka.de" rel="#{linkExternalFollow}">My Blog</a></li></ul><ul class="socialmedia"><li class="hashnode"><a href="https://hashnode.com/@maruru" target="_blank" rel="#{linkExternal}"><img alt="Hashnode" title="Hashnode" src="hashnode_light.ed9d5cd3.png"></a></li><li class="twitter"><a href="https://twitter.com/minecrawlerx" target="_blank" rel="#{linkExternal}"><img alt="Twitter" title="Twitter" src="twitter_light.27df87e4.png"></a></li><li class="xing"><a href="https://www.xing.com/profile/Marco_Alka" target="_blank" rel="#{linkExternal}"><img alt="Xing" title="Xing" src="xing_light.dc893e94.png"></a></li><li class="linkedin"><a href="https://www.linkedin.com/in/marco-alka-678825a8/" target="_blank" rel="#{linkExternal}"><img alt="LinkedIn" title="LinkedIn" src="linkedin_light.a0ec1290.png"></a></li></ul></nav><div class="content"><h1>Work in Progress</h1><p>Thank you for taking interest in me and my work!
 Unfortunately, this site is still a work in progress, so please check back later once I had the time to actually fill everything with life</p></div><link rel="stylesheet" href="main.54166fbf.css"><script src="js.52877fb3.js" defer=""></script></body></html>
