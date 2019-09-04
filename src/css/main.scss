@@ -1,4 +1,9 @@
 @import "colors";
 @import "dimensions";
+@import "themes/light";
+
+body {
+  @extend %text;
+}
 
 /* anything loaded by JS is styled here */
