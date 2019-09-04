@@ -72,13 +72,12 @@ h3 {
 }
 
 nav {
-  grid-column: col-start / span 3;
-  min-width: $screen-width-min;
   position: relative;
 
   > ul {
     list-style: none;
     padding-left: 0;
+    width: 100%;
   }
 
   > ul.menu {
@@ -109,13 +108,9 @@ nav {
   }
 
   > ul.socialmedia {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-
     > li {
-      padding-left: 1ch;
-      padding-bottom: 1ch;
+      margin: 0 1ch 1ch;
+      padding-left: 0;
 
       a:after {
         content: '';
@@ -124,11 +119,37 @@ nav {
       * {
         max-height: 50px;
       }
+
+      @media screen and (max-width: $bp-menu) {
+        display: inline;
+      }
+
+      @media screen and (min-width: $bp-menu) {
+        &.xing {
+          float: left;
+        }
+      }
+    }
+
+    @media screen and (max-width: $bp-menu) {
+      text-align: center;
+    }
+
+    @media screen and (min-width: $bp-menu) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
     }
   }
 
   @media screen and (max-width: $bp-menu) {
     grid-column: col-start / -1;
+    min-width: $screen-width-min;
+  }
+
+  @media screen and (min-width: $bp-menu) {
+    grid-column: col-start / span 3;
+    height: 100vh;
   }
 }
 
