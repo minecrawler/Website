@@ -26,6 +26,46 @@ body {
   }
 }
 
+/**
+ * Menu transition animation (incl. underlining)
+ */
+@media screen and (min-width: $bp-menu) {
+  ul.menu > li {
+    position: relative;
+    width: max-content;
+
+    > a {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+
+  ul.menu > li::before {
+    border-bottom: 2px solid $text-color;
+    bottom: .5ch;
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 3ch;
+    z-index: -1;
+  }
+
+  ul.menu > li::before,
+  ul.menu > li > a {
+    transition-duration: 500ms;
+    transition-property: color, width;
+    transition-timing-function: ease-in-out;
+  }
+
+  ul.menu > li:hover::before {
+    width: 6ch;
+  }
+
+  ul.menu > li:hover > a {
+    color: $text-color;
+  }
+}
+
 .socialmedia a {
   user-select: none;
 }

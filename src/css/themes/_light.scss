@@ -1,5 +1,7 @@
+@import "../colors";
+
 .t-light {
   &%text {
-    color: hsl(0, 0%, 25%);
+    color: $text-color;
   }
 }

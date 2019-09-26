@@ -1,4 +1,5 @@
 doctype html
+include _util
 html(lang="en")
     head
         include partials/head
@@ -10,7 +11,7 @@ html(lang="en")
             p
                 | However, if you want to see a sample of my work, check out this very website's
                 |
-                a(href="https://github.com/minecrawler/Website", target="_blank", rel="#{linkExternal}") source code
+                a(href="https://github.com/minecrawler/Website", target="_blank", rel=linkExternal) source code
                 |
                 | on GitHub!
         include partials/non-critical-resources

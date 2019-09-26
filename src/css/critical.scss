@@ -132,6 +132,7 @@ nav {
     }
 
     @media screen and (max-width: $bp-menu) {
+      margin-top: 10px;
       text-align: center;
     }
 
@@ -150,6 +151,7 @@ nav {
   @media screen and (min-width: $bp-menu) {
     grid-column: col-start / span 3;
     height: 100vh;
+    margin: 1ch 0 0 1ch;
   }
 }
 
