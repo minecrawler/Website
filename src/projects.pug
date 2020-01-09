@@ -6,12 +6,14 @@ html(lang="en")
         meta(name="description", content="Projects by Marco Alka, Software Engineer and Mentor")
     body
         include partials/menu
-        div.content
+        .content
             include partials/wip
-            p
-                | However, if you want to see a sample of my work, check out this very website's
-                |
-                a(href="https://github.com/minecrawler/Website", target="_blank", rel=linkExternal) source code
-                |
-                | on GitHub!
+            .project
+                h2 Website
+                p
+                    | This website is source-open
+                    |
+                    a(href="https://github.com/minecrawler/Website", target="_blank", rel=linkExternal) on GitHub
+                    |
+                    | !
         include partials/non-critical-resources
