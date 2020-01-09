@@ -1,0 +1,27 @@
+$opacity-start: 0%;
+
+@keyframes opener-content-desktop {
+  from {
+    margin-left: 700px;
+    margin-right: -700px;
+    opacity: $opacity-start;
+  }
+
+  to {
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 100%;
+  }
+}
+
+@keyframes opener-nav-desktop {
+  from {
+    margin-left: -200px;
+    opacity: $opacity-start;
+  }
+
+  to {
+    margin-left: 1ch;
+    opacity: 100%;
+  }
+}
