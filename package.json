@@ -8,7 +8,7 @@
     "glob": "^7.1.6",
     "mime": "^2.4.4",
     "parcel-bundler": "^1.12.4",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "sass": "^1.24.3",
     "simple-git": "^3.3.0",
     "typescript": "^3.7.4"
